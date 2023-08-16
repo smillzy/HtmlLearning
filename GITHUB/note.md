@@ -18,7 +18,7 @@ HTML 不是程式語言，是標記語言
 
   標籤是 HTML Element
 
-![HTMLElement](./截圖/07.png)
+![HTMLElement]([./截圖/07.png](https://github.com/smillzy/HtmlLearning.github.io/blob/main/%E6%88%AA%E5%9C%96/07.png))
 
 ## 巢狀元素 Nesting elements
 
