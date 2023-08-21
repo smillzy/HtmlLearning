@@ -56,6 +56,36 @@ HTML 不是程式語言，是標記語言
 </html>
 ```
 
+# Tag
+
+## opening tag &closing tag
+
+&lt;p&gt;、&lt;a&gt;
+
+## self-closing tag
+
+&lt;img /&gt;、&lt;base /&gt;、&lt;meta /&gt;
+
+# 路徑
+
+## absolite linking/path 絕對路徑
+
+需要連結到不在我們伺服器內的資源時，使用完整的**URL**當作連結對象
+
+如果網頁被刪除就會抓取不到
+
+## relative linking/path 相對路徑
+
+連結到相對於目前文件所在位置的檔案，上傳到網站上就會比較占空間
+
+**.** 目前 html 文件所在資料夾位置
+
+**..** 上層的資料夾位置
+
+**/** 可從 root directory (最上層的資料夾) 向下連結
+
+<font color=red>**文件與檔案名稱不建議中間留空白鍵**</font>
+
 # &lt;head&gt;
 
 **➜**包含網頁的特定信息，跟網頁有關的訊息 ex.誰寫的、語言、樣式(給搜尋引擎看)
@@ -203,4 +233,36 @@ a+`tab`
 ```HTML
 // HTML
 <base target="_blank" />
+```
+
+## &lt;img&gt;
+
+有兩個屬性要設定
+
+1.src (source) 圖片來源
+
+2.alt (alternative) 圖片無法顯示時的**替代**文字
+
+### relative linking
+
+```HTML
+// HTML
+<img
+  width="400"
+  height="300"
+  src="./images/故宮圖片1.jpeg"
+  alt="故宮圖片1"
+/>
+```
+
+### absolite linking
+
+```HTML
+// HTML
+<img
+  width="500"
+  height="300"
+  src="https://upload.wikimedia.org/wikipedia/commons/b/b4/NationalPalace_MuseumFrontView.jpg"
+  alt="故宮圖片_絕對路徑"
+/>
 ```
