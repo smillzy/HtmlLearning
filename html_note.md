@@ -266,3 +266,46 @@ a+`tab`
   alt="故宮圖片_絕對路徑"
 />
 ```
+
+## list 列表
+
+### &lt;ul&gt; unordered list 沒順序的列表
+
+會以**點**的方式呈現
+
+![HTMLElement](./截圖/ul.png)
+
+// HTML
+
+<ul>
+  <li>北部院區</li>
+  <li>南部院區</li>
+</ul>
+```
+
+### &lt;ol&gt; ordered list 有順序的列表
+
+會有 1. 2. 3. 的方式呈現
+
+![HTMLElement](./截圖/ol.png)
+
+// HTML
+
+<ol>
+  <li>范寬〈谿山行旅圖〉</li>
+  <li>郭熙〈早春圖〉</li>
+  <li>李唐〈萬壑松風圖〉</li>
+</ol>
+```
+
+#### ol 屬性更改
+
+[ol 屬性更改](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
+
+type:
+
+- 'a' for lowercase letters
+- 'A' for uppercase letters
+- 'i' for lowercase Roman numerals
+- 'I' for uppercase Roman numerals
+- '1' for numbers (default) 預設
