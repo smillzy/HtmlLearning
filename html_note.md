@@ -25,6 +25,34 @@ HTML 不是程式語言，是標記語言
 把元素放到另一個元素  
 必須要有正確的<> </>去完成，沒使用正確語法，容易導致無法解讀
 
+## 重要的元素類別
+
+要能夠自行判斷，之後使用 CSS 時要能預想這個元素會不會產生新的一行，會的話要考慮如何移動，才能做排版
+
+### block elements
+
+頁面中組成一個可見區塊，並在頁面中單獨佔據一行，在它前後的內容都將以一個換行分隔
+
+ex.段落&lt;p&gt;、列表&lt;ol&gt; &lt;ul&gt;、導航選單 navigation menus、頁尾 footers、&lt;body&gt;
+
+不會巢套在 inline elements 中，但有可能會巢套其他 block elements 中，ex.&lt;strong&gt;、&lt;div&gt;(division 區塊)
+
+```HTML
+// HTML
+<p>
+  <strong></strong>
+  <div></div>
+</p>
+```
+
+### inline elements 同一行
+
+放在 block elements 之中的內容，這些元素只由文件內容的一小部分組成，而非由完整段落或群組式內容組成
+
+會一直併排到空間不夠，才會換行
+
+ex.&lt;a&gt;、&lt;span&gt;
+
 ## W3C 提供的 HTML Validator(驗證器)可以確認正確性
 
 [Validator](https://validator.w3.org/#validate_by_uri)
@@ -275,6 +303,7 @@ a+`tab`
 
 ![HTMLElement](./截圖/ul.png)
 
+```HTML
 // HTML
 
 <ul>
@@ -283,14 +312,25 @@ a+`tab`
 </ul>
 ```
 
+#### ul 屬性更改
+
+[ul 屬性更改](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
+
+type:
+
+- circle
+- disc
+- square
+  Warning: Do not use this attribute, as it has been deprecated; use the **CSS** list-style-type property instead.
+
 ### &lt;ol&gt; ordered list 有順序的列表
 
 會有 1. 2. 3. 的方式呈現
 
 ![HTMLElement](./截圖/ol.png)
 
+```HTML
 // HTML
-
 <ol>
   <li>范寬〈谿山行旅圖〉</li>
   <li>郭熙〈早春圖〉</li>
