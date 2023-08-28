@@ -102,6 +102,11 @@ ex.&lt;a&gt;、&lt;span&gt;
 
 如果網頁被刪除就會抓取不到
 
+```HTML
+// HTML
+<a href="https://www.npm.gov.tw/">anchor_tag_absolite_linking</a>
+```
+
 ## relative linking/path 相對路徑
 
 連結到相對於目前文件所在位置的檔案，上傳到網站上就會比較占空間
@@ -113,6 +118,11 @@ ex.&lt;a&gt;、&lt;span&gt;
 **/** 可從 root directory (最上層的資料夾) 向下連結
 
 <font color=red>**文件與檔案名稱不建議中間留空白鍵**</font>
+
+```HTML
+// HTML
+<a href="./fitst.html">anchor_tag_relative_inking</a>
+```
 
 # &lt;head&gt;
 
@@ -349,3 +359,57 @@ type:
 - 'i' for lowercase Roman numerals
 - 'I' for uppercase Roman numerals
 - '1' for numbers (default) 預設
+
+## 表格製作
+
+- &lt;table&gt; -> 定義整個表格
+- &lt;tr&gt; -> table row，建構每一行
+- &lt;th&gt; -> table heading，定義 HTML 表格中的標題單元格
+- &lt;td&gt; -> table data，定義實際數據
+
+選擇性使用(比較能使網頁看懂，可明確區分標題跟主體)
+
+- &lt;thead&gt; -> table head
+- &lt;tbody&gt; -> table body
+- &lt;tfoot&gt; -> table foot 最底層的部分
+
+```HTML
+// HTML
+<head>
+  <style>
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>基礎資訊</h2>
+  <table>
+    <tr>
+      <th colspan="3">國立故宮博物院資訊</th>
+    </tr>
+    <tr>
+      <th>所屬部門</th>
+      <th>員額</th>
+      <th>授權法源</th>
+    </tr>
+    <tr>
+      <td>行政院</td>
+      <td>502人</td>
+      <td>《行政院組織法》、《國立故宮博物院組織法》</td>
+    </tr>
+  </table>
+</body>
+```
+
+![table](./截圖/table.png)
+
+### 表格屬性
+
+- colspan (column span) 屬性定義表格單元格應跨越的**列數**
+- rowspan 定義表格單元格應跨越的**行數**
