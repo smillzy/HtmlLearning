@@ -413,3 +413,42 @@ type:
 
 - colspan (column span) 屬性定義表格單元格應跨越的**列數**
 - rowspan 定義表格單元格應跨越的**行數**
+
+## 表單製作
+
+前端的 HTML 表單內資料通常會被傳送到後端伺服器，而伺服器把收到的資料存放到資料庫後，再回傳一個回應給客戶端
+
+&lt;form&gt; action 屬性定義了在 HTML 文檔中提交表單時將表單數據發送到何處
+
+標籤內的所有內容，有設定 **name 屬性**的資料才會被送到後端伺服器
+
+&lt;input&gt; -> 使用者填入資料
+
+&lt;label&gt; -> 標題或內容
+
+```HTML
+// HTML
+<label for="">姓名:</label>
+```
+
+&lt;input type="text" /&gt; -> 屬性設定為文字
+
+```HTML
+// HTML
+<input type="text" />
+```
+
+button type="submit" -> 按下 button 後，檔案會傳送到後端
+
+```HTML
+// HTML
+<button type="submit">文字</button>
+```
+
+自動聚焦 lable for=" " + input id=" " ->這樣點標題時，會自動聚焦在要填寫的格子上
+
+```HTML
+// HTML
+<label for="名字">姓名:</label>
+<input id="名字" type="text" />
+```
