@@ -418,10 +418,6 @@ type:
 
 前端的 HTML 表單內資料通常會被傳送到後端伺服器，而伺服器把收到的資料存放到資料庫後，再回傳一個回應給客戶端
 
-&lt;form&gt; action 屬性定義了在 HTML 文檔中提交表單時將表單數據發送到何處
-
-標籤內的所有內容，有設定 **name 屬性**的資料才會被送到後端伺服器
-
 &lt;input&gt; -> 使用者填入資料
 
 &lt;label&gt; -> 標題或內容
@@ -452,3 +448,85 @@ button type="submit" -> 按下 button 後，檔案會傳送到後端
 <label for="名字">姓名:</label>
 <input id="名字" type="text" />
 ```
+
+### type 屬性
+
+[input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>說明</th>
+      <th>補充</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>password</td>
+      <td>輸入字元時不會顯示內容</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>輸入文字</td>
+      <td>
+        <ul>
+        <li>required 要求使用者一定要填這格</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>checkbox</td>
+      <td>點選打勾的方塊</td>
+      <td>
+        <ul>
+          <li>checked 預設已打勾</li>
+          <li>value 定義checkbox 回傳出的值</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>只能填寫信箱</td>
+      <td> 
+        <ul>
+          <li>required 要求使用者一定要填這格</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>可以選取文件</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>number</td>
+      <td>只能填數字</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>radio</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+&lt;form&gt;
+
+- action 屬性定義了在 HTML 文檔中提交表單時將表單數據發**送到何處**
+
+- **name** 屬性的資料才會被送到後端伺服器
+
+- method 屬性告訴瀏覽器如何將表單數據發**送到服務器**
+
+  - GET -> data 會被附加到 action 指定的 URL，並且用**?**分隔數據
+    向伺服器請求公開透明資料
+
+  - POST -> 會把資料隱藏起來，或用來向伺服器寄送需要被儲存或處理的資料

@@ -7,11 +7,21 @@
     <title>故宮問券調查</title>
   </head>
   <body>
-    <form action="">
-      <label for="名字">姓名:</label>
-      <input id="名字" type="text" name="姓名" />
+    <form action="" method="get">
+      <!-- <label for="名字">姓名:</label>
+      <input id="名字" type="text" name="姓名" /> -->
       <!-- 只有加上name屬性，資料才會被送到後端伺服器 -->
-      <button type="submit">提交表單</button>
+      <!-- <button type="submit">提交表單</button> -->
+      <!-- <label for="email">帳號:</label>
+      <input id="email" type="text" name="email" /> -->
+      <!-- <label for="password">密碼:</label>
+      <input id="password" type="password" name="password" /> -->
+      <label for="信箱">信箱</label>
+      <input id="信箱" type="email" name="email" required />
+      <input id="電子報" type="checkbox" checked name="電子報" value="訂閱" />
+      <label for="電子報">訂閱電子報</label>
+      <button type="submit">登入系統</button>
+      <!-- <input type="file" /> -->
     </form>
   </body>
 </html>
