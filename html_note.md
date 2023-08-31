@@ -434,19 +434,29 @@ type:
 <input type="text" />
 ```
 
-button type="submit" -> 按下 button 後，檔案會傳送到後端
-
-```HTML
-// HTML
-<button type="submit">文字</button>
-```
-
 自動聚焦 lable for=" " + input id=" " ->這樣點標題時，會自動聚焦在要填寫的格子上
 
 ```HTML
 // HTML
 <label for="名字">姓名:</label>
 <input id="名字" type="text" />
+```
+
+### button
+
+button type="submit" -> 按下 button 後，檔案會傳送到後端
+
+若放在&lt;form&gt;標籤內，則預設的 type 是 submit
+
+[button tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+
+- submit 資料會被叫到後端去 The button submits the form data to the server.
+- reset 所有值會被重新設定 The button resets all the controls to their initial values.
+- button 單純 button 沒有動作 The button has no default behavior, and does nothing when pressed by default.
+
+```HTML
+// HTML
+<button type="submit">文字</button>
 ```
 
 ### type 屬性
@@ -465,7 +475,11 @@ button type="submit" -> 按下 button 後，檔案會傳送到後端
     <tr>
       <td>password</td>
       <td>輸入字元時不會顯示內容</td>
-      <td> </td>
+      <td>
+      <ul>
+        <li>minlength 限制最短長度</li>
+        <li>maxlength 限制最長長度</li>
+      </td>
     </tr>
     <tr>
       <td>text</td>
@@ -473,6 +487,7 @@ button type="submit" -> 按下 button 後，檔案會傳送到後端
       <td>
         <ul>
         <li>required 要求使用者一定要填這格</li>
+        <li>placeholder 提醒輸入值</li>
         </ul>
       </td>
     </tr>
@@ -503,20 +518,85 @@ button type="submit" -> 按下 button 後，檔案會傳送到後端
     <tr>
       <td>number</td>
       <td>只能填數字</td>
-      <td> </td>
+      <td>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number">input number</a></li>
+          <li>value 預設值</li>
+          <li>min 設定最小值</li>
+          <li>max 設定最大值</li>
+          <li>step 數字移動的跳動點</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>radio</td>
-      <td> </td>
-      <td> </td>
+      <td>在集合的組合中，只能選擇一個值</td>
+      <td>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio">input radio</a></li>
+      <li>name 屬性名稱一樣，就會只回傳一個值回去</li>
+      <li>required 要求使用者一定要填這格，可以只，可以只放一個選項後面</li>
+      </td>
     </tr>
     <tr>
       <td>range</td>
-      <td> </td>
+      <td>可拖曳的滑桿</td>
       <td> </td>
     </tr>
   </tbody>
 </table>
+
+### select/option
+
+下拉式選單
+
+```HTML
+// HTML
+<label for="gender">性別:</label>
+<select name="gender" id="gender" required>
+  <option></option>
+  <option value="male">男性</option>
+  <option value="female">女性</option>
+  <option value="other">其他</option>
+</select>
+```
+
+### data list
+
+秀出可選清單
+
+```HTML
+// HTML
+<label for="area">地區</label>
+<input list="area-list" type="text" name="area" id="area" />
+<datalist id="area-list">
+  <option value="台北市">台北市</option>
+  <option value="新北市">新北市</option>
+  <option value="桃園市">桃園市</option>
+  <option value="台中市">台中市</option>
+  <option value="台南市">台南市</option>
+  <option value="高雄市">高雄市</option>
+</datalist>
+```
+
+![data_list](./截圖/data_list.png)
+
+### textarea
+
+可以填寫長篇大論的東西(詳述)
+
+```HTML
+// HTML
+<label for="suggestion">給網站的建議:</label>
+<textarea
+  name="suggestion"
+  id="suggestion"
+  cols="30"
+  rows="10"
+  placeholder="填寫給網站的建議"
+></textarea>
+```
+
+### 補充說明
 
 &lt;form&gt;
 
@@ -530,3 +610,32 @@ button type="submit" -> 按下 button 後，檔案會傳送到後端
     向伺服器請求公開透明資料
 
   - POST -> 會把資料隱藏起來，或用來向伺服器寄送需要被儲存或處理的資料
+
+- index.html 是伺服器在目錄中查找的默認文件
+
+- self-closing tag 和所有其他標籤之間的重要區別是**自閉合標籤代表 空白元素** void element，不能包含任何 content
+
+- Favicon 是 favorites icon 的縮寫，瀏覽器可以將 favicon 顯示於瀏覽器的網址列中，也可置於書籤列表的網站名稱前  
+  icon 的檔案名稱會設定為 favicon.ico
+  ```HTML
+  // HTML
+  <link rel="icon" href="檔案位置" />
+  ```
+
+#### &lt;br&gt;
+
+插入一個換行符，想要換行但不想要開始一個新的標籤的時候，或同個標籤內部會需要換行
+
+#### &lt;hr&gt; horizontal rule
+
+段落之間的主題中斷，如下圖分隔線
+
+![horizontal_rule](./截圖/horizontal_rule.png)
+
+#### 添加特殊符號
+
+要將符號添加到 HTML 頁面，我們可以使用 HTML entity
+
+HTML entity 使用與號 & 開頭並以分號 ; 結尾
+
+[HTML symbols](https://www.htmlsymbols.xyz/)
