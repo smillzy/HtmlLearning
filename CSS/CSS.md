@@ -42,3 +42,54 @@ CSS comment 語法為 `/**/`
     </style>
 </head>
 ```
+
+# 樣式附加於HTML  
+
+CSS程式碼基本上可放置於三個地方：  
+
+- inline styling (把HTML寫在同一行) 優點是*優先層級最高*，但缺點是只能對**特定**的標籤設定樣  
+
+```CSS
+<h1 style="color: red;">國立故宮博物院</h1>
+```  
+
+- internal styling (把HTML文件跟CSS文件放在同一個文件當中，修改的內容僅限於當前文件) 優點是方便撰寫，缺點是若有多個HTML頁面，則難以維護程式碼  
+
+```CSS
+<head>
+    <style>
+      /* selector */
+      h1 {
+        color: red;
+      }
+
+      h2 {
+        color: green;
+      }
+    </style>
+</head>
+```  
+
+- external styling (CSS寫一份文件，HTML寫一份文件，讓HTML去連結到CSS頁面) 最常見的放置位置，其優點為容易維護  
+
+HTML的head連結CSS文件  
+
+```HTML
+<head>
+<link rel="stylesheet" href="./style.css" />
+</head>
+```  
+
+CSS文件內容  
+
+```CSS
+selector
+h1 {
+  color: red;
+}
+
+h2 {
+  color: green;
+}
+```  
+
