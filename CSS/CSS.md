@@ -93,3 +93,50 @@ h2 {
 }
 ```  
 
+# 顏色設定  
+
+CSS當中有下列幾種常見的顏色設定方式：  
+
+- Color Keywords (named color) ：這些為CSS**預定保留**的關鍵字，例如red, black, purple, green, 珊瑚色coral等等  
+
+[ndn named-color](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)  
+
+- rgb：依照光學三原色，分別設定**紅、綠、藍**三個色彩  
+  數值範圍是0到255，共256 (2^8) 種不同選擇  
+
+  每個color channel 使用1 byte (=8bits)來儲存  
+
+  ```CSS
+  h1 {
+  color: rgb(255, 255, 0);
+  }
+  ```  
+
+- rgba：同rgb，但使用多一個叫**alpha**的channel來儲存*透明度*  
+  透明度範圍是0到1  
+
+  ```CSS
+  h1 {
+  color: rgba(255, 255, 0, 0);
+  }  
+  ```  
+
+- hex：使用**十六進制**的數字來代表顏色  
+  十六進制數字的範圍是0, 1, 2, …, 8, 9, A, B, C, …, F  
+
+  ```CSS
+  h1 {
+  color: #000000;
+  }
+  ```  
+
+- HSL：即色相、飽和度、亮度（Hue, Saturation, Lightness）  
+  這種表示法試圖做到比基於笛卡爾坐標系的幾何結構RGB更加直觀  
+
+  ```CSS
+  h1 {
+  color: #cec2e0;
+  }
+  ```  
+
+HSL與hex系統互換可由用 [系統互換](https://coloors86.netlify.app) 完成  
