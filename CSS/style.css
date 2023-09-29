@@ -1,7 +1,37 @@
-h1 {
+/* h1 {
   color: #cec2e0;
 }
 
 h2 {
   color: green;
+} */
+
+/* *{
+  color: blue;
+} */
+
+/* element selector */
+
+/* h2 {
+  color: green;
+} */
+
+/* id selector */
+
+/* #first-paragraph {
+  color: rgb(128, 64, 0);
+} */
+
+/* class selector */
+
+/* .blue-text {
+  color: purple;
 }
+
+.large-text{
+  font-size: 32px;
+} */
+
+/* a.large-text{
+  font-size: 32px;
+} */
