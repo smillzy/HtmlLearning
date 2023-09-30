@@ -215,9 +215,54 @@ a.large-text{  /* 選取<a> + . + class name */
 }
 ```  
 
-- Grouping Selector 可一次選擇所有數個 HTML 元素，並以逗號分隔  
-- Descendant Selector 由兩個或多個用空格分隔的選擇器組成  
-- Attribute Selector 選擇所有具有相同屬性的HTML 元素  
+- Grouping Selector 可**一次選擇數個** HTML 元素，並以*逗號*分隔  
+
+  ```CSS
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6{
+    color: red;
+  }
+  ```  
+
+- 後裔Descendant Selector 由兩個或多個用**空格分隔**的選擇器組成  
+
+  HTML文件  
+
+  ```HTML
+  <h2>相關頁面</h2>
+  <div class="link1">
+    <a href="https:www.google.com">Google首頁</a>
+    <a href="https:www.youtube.com">YouTube首頁</a>
+  </div>
+  <div class="link2">
+    <a href="https:www.yahoo.com">yahoo首頁</a>
+  </div>
+  ```
+
+  CSS文件  
+
+  ```CSS
+  div.link1 a {
+    color: red;
+  }
+
+  div.link2 a {
+    color: green;
+  }
+  ```  
+
+- Attribute Selector 選擇**所有**具有**相同屬性**的HTML 元素  
+
+  ```CSS
+  input[type="text"] {
+    color: red;
+  }
+  ```  
+
 - pseudo-class 用於指定所選元素的特殊狀態。 例如， :hover 可用於在用戶滑鼠懸停在按鈕上時更改按鈕的樣式。 :nth-child()可用來選擇第n個元素  
 - pseudo-element 是添加到選擇器的關鍵字，可讓我們設置所選元素的特定部分的樣式。 例如，::first-line 可用於更改段落第一行的字體  
 

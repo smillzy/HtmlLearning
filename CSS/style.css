@@ -35,3 +35,22 @@ h2 {
 /* a.large-text{
   font-size: 32px;
 } */
+
+/* h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6{
+  color: red;
+} */
+
+/* 因為有 DOM Tree 結構 */
+
+/* div.link1 a {
+  color: red;
+}
+
+div.link2 a {
+  color: green;
+} */
