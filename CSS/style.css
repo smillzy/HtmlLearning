@@ -54,3 +54,24 @@ h6{
 div.link2 a {
   color: green;
 } */
+
+/* input[type="text"] {
+  color: red;
+}
+
+input[type="text"]:focus {
+  color: lightgreen;
+} */
+
+/* p::before {
+  content: ">>";
+  color: blue;
+} */
+
+/* p::first-line {
+  font-size: 32px;
+} */
+
+*::selection {
+  background-color: lightgreen;
+}

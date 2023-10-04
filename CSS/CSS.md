@@ -43,17 +43,17 @@ CSS comment 語法為 `/**/`
 </head>
 ```
 
-# 樣式附加於HTML  
+# 樣式附加於 HTML
 
-CSS程式碼基本上可放置於三個地方：  
+CSS 程式碼基本上可放置於三個地方：
 
-- inline styling (把HTML寫在同一行) 優點是*優先層級最高*，但缺點是只能對**特定**的標籤設定樣  
+- inline styling (把 HTML 寫在同一行) 優點是*優先層級最高*，但缺點是只能對**特定**的標籤設定樣
 
 ```CSS
 <h1 style="color: red;">國立故宮博物院</h1>
-```  
+```
 
-- internal styling (把HTML文件跟CSS文件放在同一個文件當中，修改的內容僅限於當前文件) 優點是方便撰寫，缺點是若有多個HTML頁面，則難以維護程式碼  
+- internal styling (把 HTML 文件跟 CSS 文件放在同一個文件當中，修改的內容僅限於當前文件) 優點是方便撰寫，缺點是若有多個 HTML 頁面，則難以維護程式碼
 
 ```CSS
 <head>
@@ -68,19 +68,19 @@ CSS程式碼基本上可放置於三個地方：
       }
     </style>
 </head>
-```  
+```
 
-- external styling (CSS寫一份文件，HTML寫一份文件，讓HTML去連結到CSS頁面) 最常見的放置位置，其優點為容易維護  
+- external styling (CSS 寫一份文件，HTML 寫一份文件，讓 HTML 去連結到 CSS 頁面) 最常見的放置位置，其優點為容易維護
 
-HTML的head連結CSS文件  
+HTML 的 head 連結 CSS 文件
 
 ```HTML
 <head>
 <link rel="stylesheet" href="./style.css" />
 </head>
-```  
+```
 
-CSS文件內容  
+CSS 文件內容
 
 ```CSS
 selector
@@ -91,111 +91,111 @@ h1 {
 h2 {
   color: green;
 }
-```  
+```
 
-# 顏色設定  
+# 顏色設定
 
-CSS當中有下列幾種常見的顏色設定方式：  
+CSS 當中有下列幾種常見的顏色設定方式：
 
-- Color Keywords (named color) ：這些為CSS**預定保留**的關鍵字，例如red, black, purple, green, 珊瑚色coral等等  
+- Color Keywords (named color) ：這些為 CSS**預定保留**的關鍵字，例如 red, black, purple, green, 珊瑚色 coral 等等
 
-[ndn named-color](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)  
+[ndn named-color](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
 
 - rgb：依照光學三原色，分別設定**紅、綠、藍**三個色彩  
-  數值範圍是0到255，共256 (2^8) 種不同選擇  
+  數值範圍是 0 到 255，共 256 (2^8) 種不同選擇
 
-  每個color channel 使用1 byte (=8bits)來儲存  
+  每個 color channel 使用 1 byte (=8bits)來儲存
 
   ```CSS
   h1 {
   color: rgb(255, 255, 0);
   }
-  ```  
+  ```
 
-- rgba：同rgb，但使用多一個叫**alpha**的channel來儲存*透明度*  
-  透明度範圍是0到1  
+- rgba：同 rgb，但使用多一個叫**alpha**的 channel 來儲存*透明度*  
+  透明度範圍是 0 到 1
 
   ```CSS
   h1 {
   color: rgba(255, 255, 0, 0);
-  }  
-  ```  
+  }
+  ```
 
 - hex：使用**十六進制**的數字來代表顏色  
-  十六進制數字的範圍是0, 1, 2, …, 8, 9, A, B, C, …, F  
+  十六進制數字的範圍是 0, 1, 2, …, 8, 9, A, B, C, …, F
 
   ```CSS
   h1 {
   color: #000000;
   }
-  ```  
+  ```
 
 - HSL：即色相、飽和度、亮度（Hue, Saturation, Lightness）  
-  這種表示法試圖做到比基於笛卡爾坐標系的幾何結構RGB更加直觀  
+  這種表示法試圖做到比基於笛卡爾坐標系的幾何結構 RGB 更加直觀
 
   ```CSS
   h1 {
   color: #cec2e0;
   }
-  ```  
+  ```
 
-HSL與hex系統互換可由用 [系統互換](https://coloors86.netlify.app) 完成  
+HSL 與 hex 系統互換可由用 [系統互換](https://coloors86.netlify.app) 完成
 
-# CSS Selectors 選擇器  
+# CSS Selectors 選擇器
 
-選擇器Selectors -> CSS中去選擇哪些HTML的標籤是我們要選擇來套用樣式的  
+選擇器 Selectors -> CSS 中去選擇哪些 HTML 的標籤是我們要選擇來套用樣式的
 
-- 全部的選擇器 Universal Selector `*` 匹配*任何類型*的HTML element  
+- 全部的選擇器 Universal Selector `*` 匹配*任何類型*的 HTML element
 
   ```CSS
   *{
   color: blue;
   }
-  ```  
+  ```
 
-- Element Selector可選擇特定的HTML element (tag)  
+- Element Selector 可選擇特定的 HTML element (tag)
 
   ```CSS
   h2 {
   color: green;
   }
-  ```  
+  ```
 
-- ID Selector可選擇有特定ID屬性的HTML element  
+- ID Selector 可選擇有特定 ID 屬性的 HTML element
 
-  ID 只能設定特定標籤，**不可重複利用**  
+  ID 只能設定特定標籤，**不可重複利用**
 
-  Defines a **unique** identifier (ID) which must be unique in the whole document  
-  
-  [mdn id](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/id)  
+  Defines a **unique** identifier (ID) which must be unique in the whole document
+
+  [mdn id](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/id)
 
   ```CSS
   #first-paragraph {
   color: rgb(128, 64, 0);
   }
-  ```  
+  ```
 
-- Class Selector可選擇所有有特定class屬性的HTML element  
-  
-  **class可以重複利用，設定在不同標籤中**  
+- Class Selector 可選擇所有有特定 class 屬性的 HTML element
 
-  A space-separated list of the classes of the element  
+  **class 可以重複利用，設定在不同標籤中**
+
+  A space-separated list of the classes of the element
 
   ```CSS
   .blue-text {
   color: purple;
   }
-  ```  
+  ```
 
-  一個標籤可以有多個class，在後面加空白鍵  
+  一個標籤可以有多個 class，在後面加空白鍵
 
-  HTML文件內容，同時給顏色、放大字體效果  
+  HTML 文件內容，同時給顏色、放大字體效果
 
   ```HTML
   <p class="blue-text large-text">
-  ```  
-  
-  CSS文件內容，設定方式  
+  ```
+
+  CSS 文件內容，設定方式
 
   ```CSS
   .blue-text {
@@ -205,32 +205,32 @@ HSL與hex系統互換可由用 [系統互換](https://coloors86.netlify.app) 完
   .large-text{
     font-size: 32px; /*文字大小*/
   }
-  ```  
+  ```
 
-`element selector、class selector並用`  
+`element selector、class selector並用`
 
 ```CSS
 a.large-text{  /* 選取<a> + . + class name */
   font-size: 32px;
 }
-```  
+```
 
-- Grouping Selector 可**一次選擇數個** HTML 元素，並以*逗號*分隔  
+- Grouping Selector 可**一次選擇數個** HTML 元素，並以*逗號*分隔
 
   ```CSS
-  h1, 
-  h2, 
-  h3, 
-  h4, 
-  h5, 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
   h6{
     color: red;
   }
-  ```  
+  ```
 
-- 後裔Descendant Selector 由兩個或多個用**空格分隔**的選擇器組成  
+- 後裔 Descendant Selector 由兩個或多個用**空格分隔**的選擇器組成
 
-  HTML文件  
+  HTML 文件
 
   ```HTML
   <h2>相關頁面</h2>
@@ -243,7 +243,7 @@ a.large-text{  /* 選取<a> + . + class name */
   </div>
   ```
 
-  CSS文件  
+  CSS 文件
 
   ```CSS
   div.link1 a {
@@ -253,18 +253,73 @@ a.large-text{  /* 選取<a> + . + class name */
   div.link2 a {
     color: green;
   }
-  ```  
+  ```
 
-- Attribute Selector 選擇**所有**具有**相同屬性**的HTML 元素  
+- Attribute Selector 選擇**所有**具有**相同屬性**的 HTML 元素
 
   ```CSS
   input[type="text"] {
     color: red;
   }
-  ```  
+  ```
 
-- pseudo-class 用於指定所選元素的特殊狀態。 例如， :hover 可用於在用戶滑鼠懸停在按鈕上時更改按鈕的樣式。 :nth-child()可用來選擇第n個元素  
-- pseudo-element 是添加到選擇器的關鍵字，可讓我們設置所選元素的特定部分的樣式。 例如，::first-line 可用於更改段落第一行的字體  
+- pseudo-class 用於指定所選**元素**的**特殊狀態**
 
-pseudo-element(偽元素)的目的在於創造一個DOM當中不存在的HTML元素。我們知道第一行並沒有被任何tag包住，但::first-line選取的過程中，就像是用了一個看不到的tag把第一行包住，所以才能選到這行。這就是pseudo-element(偽元素)的命名原因
-pseudo-class(偽類) 中，“class”單字的使用更多是指“具有共同特徵並通過種類或質量與其他事物區分開來的一組或類別的事物”，跟Object-Oriented Programming當中的class無關
+class 單字的使用更多是指**具有共同特徵並通過種類或質量與其他事物區分開來的一組或類別的事物**，跟 Object-Oriented Programming 當中的 class 無關
+
+例如：  
+`:hover` 可用於在用戶滑鼠懸停在按鈕上時更改按鈕的樣式
+
+```CSS
+input[type="text"] {
+  color: red;
+}
+
+/* 當滑鼠游標碰到要輸入的文字時，會變色 */
+input[type="text"]:hover {
+  color: lightgreen;
+}
+
+/* 當滑鼠點要輸入的文字時，會變色 */
+input[type="text"]:active {
+  color: lightgreen;
+}
+
+/* 在當前輸入欄上，文字會變色 */
+input[type="text"]:focus {
+  color: lightgreen;
+}
+```
+
+`:nth-child()`可用來選擇第**n**個元素
+
+- 不存在的元素 pseudo-element 是添加到選擇器的關鍵字，可讓我們設置所選元素的**特定部分**的樣式
+
+例如：
+
+`::before`
+
+```CSS
+p::before {
+  content: ">>";
+  color: blue;
+}
+```
+
+目的在於創造一個 DOM 當中不存在的 HTML 元素。我們知道第一行並沒有被任何 tag 包住，但::first-line 選取的過程中，就像是用了一個看不到的 tag 把第一行包住，所以才能選到這行。
+
+`::first-line` 可用於更改段落第一行的字體
+
+```CSS
+p::first-line {
+  font-size: 32px;
+}
+```
+
+`::selection` 更改選取時的底色
+
+```CSS
+*::selection {
+  background-color: lightgreen;
+}
+```
