@@ -323,3 +323,23 @@ p::first-line {
   background-color: lightgreen;
 }
 ```
+
+# CSS 概念
+
+## 繼承 Inheritance
+
+### Parents and Children
+
+在 HTML 當中的 DOM Tree 中，Parent Node 可被稱為 Child Node 的父元素 Parent Element，反之， Child Node 可稱為 Parent Node 的子元素 Child Element
+
+### Inherited Properties and Non-Inherited Properties
+
+CSS 當中的某些屬性會被子元素繼承，而某些不會
+
+會繼承的屬性中，常見的包含 `color`, `font-family`, `font-size`, `font-weight`, `list-style-type`, `text-align`
+
+[詳細清單](https://www.w3.org/TR/CSS21/propidx.html)
+
+然而，因為 user agent styling 優先度比 inheritance 更高，所以要注意瀏覽器的預設樣式**可能會覆蓋**繼承的屬性。例如，`<a>`標籤的顏色通常需要額外設定
+
+user agent styling -> 指 brower default ，瀏覽器給的預設樣式
